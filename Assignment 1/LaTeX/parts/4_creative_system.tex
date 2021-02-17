@@ -1,0 +1,48 @@
+\part{The creative system}
+\label{part:creative_system}
+
+%------------------------------------
+\clearpage
+\section{Viability}
+\label{sec:viability}
+
+% PSA merge en sources van werking en mercedes AI based? (not full - second assignment is sources)
+It has already been discussed that this topic is gaining interest in the car industry, thus the idea of an actual AI designed production car is likely to become reality.
+The Hack Rod project already teased this idea, it is seen as the world's first AI-generated car \citep{hackrod}. 
+More recently, the Czinger 21C is a 3D printed hypercar that claims to have used AI in several steps of the designing process \citep{czinger}.
+This would have enhanced performance and lowered the cost according to Czinger.
+
+Whilst these are interesting, they aren't viable for this project due to limited resources.
+This project would limit itself to a more simple and fun DCGAN based on existing technology such as StyleGAN to produce images of cars created by the system.
+No attention will be paid to whether or not these cars may be possible to be produced and driven, only the visual aspect is of importance for this project.
+
+%------------------------------------
+
+\section{System generated creativity}
+\label{sec:generated_creativity}
+
+%How my computational system will create in this domain (full)
+It is planned to make a simple and fun DCGAN, as already pointed out previously.
+This system will generate images of \textit{non existing} cars that take design cues from the cars of the input data.
+Ideally, the situations proposed in section \ref{sec:new_era} would be addressable with the system.
+
+In future milestones, it will be important to pay attention that the system is describable in terms of the creative systems framework. 
+Ritchie's criteria and Jourdanous’s four perspectives will also have to be addressed as seen during the lectures.
+
+
+%------------------------------------
+
+\section{Available data sources}
+\label{sec:data_sources}
+
+%Computational data sources for my creative domain (full)
+One of the issues with DCGAN is the sheer amount of data that is needed.
+The next assignment will give more insight into this but it is not uncommon to need 50 thousand images or more.
+Luckily some tricks could aid in gathering this data:
+\begin{itemize}
+    \item Taking images from car listing sites (e.g. CarMax).
+    \item Using existing data sets.
+    \item Starting from an already trained CNN.
+\end{itemize}
+
+This is again something the literature study in the next milestone will hopefully give more insight into.
