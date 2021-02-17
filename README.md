@@ -13,5 +13,5 @@ This is the GitHub repository for the individual Computational Creativity projec
 
 ## Finished parts 
 - Assignment 1: Defining your Creative Domain
-   - [Self-contained PDF (coming soon)](Assignment%201/CC_Assignment1_Bontinck_Lennert_568702_VUB.pdf)
+   - [Self-contained PDF](Assignment%201/CC_Assignment1_Bontinck_Lennert_568702_VUB.pdf)
    - [Source files](Assignment%201/)
