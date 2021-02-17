@@ -7,7 +7,20 @@
 \label{sec:needed_components}
 
 %Components I would need to implement to make my system work (full)
-TODO
+This section will be kept abstract but the following components will most likely be needed for the system:
+\begin{itemize}
+    \item A crawler that collects input training images from the web.
+    \item A DCGAN that generates images of cars based on the training images.
+    \begin{itemize}
+        \item StyleGAN seems like a good starting point. Further literature exploration in the next milestone will give more insight.
+    \end{itemize}
+    \item An online questionnaire to:
+    \begin{itemize}
+        \item Get human feedback on whether or not the resulting cars look like actual cars.
+        \item Get feedback from car enthusiast if they recognize certain design cues from famous car brands.
+    \end{itemize}
+    \item Much more as this project evolves...
+\end{itemize}
 
 %------------------------------------
 
@@ -15,7 +28,8 @@ TODO
 \label{sec:black_box}
 
 %Wat als CNN niet geeft wat je wou (not full)
-TODO
+One of the biggest problems with CNN and DCGAN is the use of hidden layers by the model.
+This means getting insight on the working will be hard and troubleshooting unexpected results won't be trivial.
 
 %------------------------------------
 
@@ -26,4 +40,5 @@ TODO
 %How will the elements of it fit together to be describable as a creative system in terms of the creative systems framework (CSF)?
 %How well will it work in terms of Ritchie's (2007) criteria for assessing a creative program?
 %How well can the system as a whole be understood in terms of Jourdanous’s four perspectives?
-TODO
+The criteria of Ritchie and others as seen during the lectures will have to be analysed for the system to determine whether or not the system is an actual creative one.
+Guidance is asked from the teaching assistant to be on the right path when starting with implementing the code to ensure it will be an actual creative one.
