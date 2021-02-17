@@ -1,0 +1,67 @@
+\documentclass[oneside]{book}
+
+% Load the VUB package.
+% This has many options, please read the documentation at
+% https://gitlab.com/rubdos/texlive-vub
+\usepackage{vub}
+
+% Some highly suggested packages, please read their manuals.
+\usepackage{cleveref}
+\usepackage[natbib,style=apa]{biblatex}
+\addbibresource{../bibliography.bib}
+\usepackage{listings}
+
+%space between paragraph and indent all
+\setlength{\parskip}{1em}
+\usepackage{indentfirst}
+
+%space between bib entries
+\setlength\bibitemsep{2\itemsep}
+
+%images settings
+\graphicspath{ {./images/} }
+\usepackage{graphicx,caption}
+\usepackage{float}
+\usepackage{rotating}
+\usepackage{tikz}
+
+%fix section numbering for use with parts
+\renewcommand*\thepart{\Roman{part}}
+\makeatletter
+\@addtoreset{section}{part}
+\makeatother
+\renewcommand*\thesection{\arabic{part}.\arabic{section}}
+\renewcommand*\thesubsection{\thesection.\arabic{subsection}}
+
+%START title
+\input{parts/1_title}
+\begin{document}
+\frontmatter
+\maketitle
+%END title
+
+%START abstract
+\input{parts/2_abstract}
+%END abstract
+
+
+%TOC
+\tableofcontents
+\mainmatter
+
+%START backstory
+\input{parts/3_backstory}
+
+%START creative vision
+\input{parts/4_creative_vision}
+
+%START hurdles
+\input{parts/5_expected_hurdles}
+
+%START figures
+\input{parts/6_figures}
+
+%references list
+\nocite{*}
+\printbibliography[heading=bibintoc, title={References}]
+\end{document}
