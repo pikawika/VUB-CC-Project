@@ -1,0 +1,81 @@
+\part{Relevant literature}
+\label{part:literature}
+
+% Describes the contributions of at least two computational creativity research papers
+% Discusses the relevance of these papers to your proposed creative system
+
+% In particular you should identify how your approach differs to this related work. 
+% It is important to remember that the papers you choose needn’t necessarily be addressing exactly the same creative domain.
+% It might be some other aspect of these papers that makes them relevant to your project. 
+% For example, it might be the computational paradigm for tackling creativity, or the methods of evaluation used.
+
+%------------------------------------
+
+\section{Generating visuals}
+\label{sec:generating_visuals}
+
+Since the goal of the creative system is to generate car designs, a technology that is capable of generating visuals has to be studied.
+Generative adversarial networks (GANs), first introduced by \citet{gan_founder}, seem most appropriate for this task as such networks have also been used for similar, non-scientific, projects by \citet{gancar1}, \citet{gancar2}, \citet{gancar3} and more.
+
+Whilst GANs are great, they require a lot of training data.
+This data directly influences the learning of the generating agent and can be used as a way of controlling the behaviour of the AI.
+Several datasets are publicly available containing labelled images of cars, with the LSUN-Stanford Car Dataset by \citet{cardb} being one of many.
+These datasets could be used to train GANs bypassing the time-consuming task of initial data collecting.
+
+Successful attempts at making convincing GANs using this dataset have been achieved by \citet{scientificcargan1} and \citet{scientificcargan2}.
+The latter of which makes use of and improves upon StyleGAN by \citet{stylegan}.
+There exist multiple official implementations of StyleGAN that are free to use and modify, making it a popular start for many GAN related projects.
+
+A particularly interesting research paper worth mentioning is the one by \citet{creativecargan}.
+In this paper, a creative system is developed which takes a pen-and-paper sketch of a car and returns a graphical representation of what that car could look like in real life.
+The authors of this paper deem this system to be creative since it is capable of generating images from angles of the car that are not visible in the input sketch.
+
+
+%------------------------------------
+
+\section{Black-box problem}
+\label{sec:black_box_problem}
+
+From the previous section, it's clear that powerful GANs such as StyleGAN are capable of producing the desired results for this project.
+However, these results are not guaranteed and a big issue with GANs is the fact that they are black-box models as they often rely on deep convolutional neural networks (CNNs).
+This means that the actual working of these models is hard to humanly reason about and have influential power over besides from the training data.
+This also makes it hard to troubleshoot and steer a model if it doesn't achieve the desired results.
+Manipulations to StyleGAN that allow for more control such as that from \citet{rigstylegan} prove this isn't impossible but remains a hard task.
+
+This black-box problem is also present with CNNs and other AI models which means there's also a lot of active research in this field.
+Research by \citet{CNNrigging} shows it is possible to disable specific hidden units from a CNN by nullifying their output.
+By disabling these hidden units their role and impact on a model can be studied.  
+
+If all of the above would fail to give a desired result an existing pre-trained model can be used as starting point.
+The official documentation of StyleGAN provides such models for a car optimized GAN.
+
+
+%------------------------------------
+\clearpage
+\section{Evaluating creativity}
+\label{sec:evaluating_creativity}
+
+Perhaps the most challenging part of this project is evaluating the creativity of the system.
+One important step that should be tackled by the next milestone is describing the system in terms of the creative systems framework.
+The creativity can be evaluated by using Ritchie's and Jourdanous’s criteria as seen during the computation creativity course.
+
+Even just determining whether a system is creative or not is a difficult task that often includes subjectivity.
+The already discussed research by \citet{creativecargan} claims their system is creative without giving clear objective reasoning.
+Some of their incentives to claim it as a creative system are:
+\begin{itemize}
+    \item The car design domain is deemed a creative domain.
+    \item The output of the system would be deemed creative if it were developed by a human.
+    \item Their system generates car designs in multiple hitherto unseen perspectives.
+    \item Their model, only trained on cars, shows pleasing results for sketches of bikes and non-automobile entities such as trees.
+\end{itemize}
+
+Some of these points hold for the proposed system of this project and others can be validated once the system is implemented.
+A survey can be held to check if:
+\begin{itemize}
+    \item People would deem the output creative if it were from a human.
+    \item Design elements from existing cars are recognized.
+    \begin{itemize}
+        \item This is also the case in human-generated car designs.
+        \item It would have to be checked if the output differs enough from the given input to validate the system is P-creative.
+    \end{itemize}
+\end{itemize}
