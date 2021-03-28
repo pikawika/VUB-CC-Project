@@ -16,5 +16,7 @@ This is the GitHub repository for the individual Computational Creativity projec
    - [Self-contained PDF](Assignment%201/CC_Assignment1_Bontinck_Lennert_568702_VUB.pdf)
 - Assignment 2: Surveying Relevant Literature
    - [Self-contained PDF](Assignment%202/CC_Assignment2_Bontinck_Lennert_568702_VUB.pdf)
-- Assignment 2: Designing your Creative System
+- Assignment 3: Designing your Creative System
    - [Self-contained PDF](Assignment%203/CC_Assignment3_Bontinck_Lennert_568702_VUB.pdf)
+- Intermediate presentation
+   - [PDF export of presentation](Presentations/intermediate_presentation.pdf)
