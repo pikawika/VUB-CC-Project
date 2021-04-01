@@ -6,6 +6,7 @@ More details on the installation can be found [here](SETUP.md).
 ## Table of contents
 > - [Student info](#student-info)
 > - [Used GAN](#used-gan)
+> - [Interesting layers and components](#interesting-layers-and-components)
 
 ## Student info
 - **Name**: Bontinck Lennert
