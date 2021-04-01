@@ -1,4 +1,5 @@
-## Setup
+## Setup (copy from clone folder)
+
 1. Install anaconda or miniconda
 2. Install git, then clone respository: `git clone https://github.com/harskish/ganspace/`
 3. Create environment: `conda create -n ganspace python=3.7`

@@ -1,8 +1,8 @@
 # GANSpace implementation
 
-The clone folder consists of a redirect to the GANSpace GitHub library, commit [65b0c4c7a4bbdcb5fedebb7c033dab59e27d61c0](https://github.com/harskish/ganspace/tree/65b0c4c7a4bbdcb5fedebb7c033dab59e27d61c0) was used for the project.
+The clone folder consists of an edited copy of the GANSpace GitHub library, commit [65b0c4c7a4bbdcb5fedebb7c033dab59e27d61c0](https://github.com/harskish/ganspace/tree/65b0c4c7a4bbdcb5fedebb7c033dab59e27d61c0).
 
-Besides the clone some extra files are given here since the main GitHub repository contained some bugs with Ubuntu 20.04. These bugs have been resolved in this clone and an updated [SETUP.MD](SETUP.md) is foreseen.
+In the edited clone some extra files are given since the main GitHub repository contained some bugs with Ubuntu 20.04. These bugs have been resolved in this clone and an updated [SETUP.MD](SETUP.md) is foreseen.
 
 ## Table of contents
 > - [Student info](#student-info)
