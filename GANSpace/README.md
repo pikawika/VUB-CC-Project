@@ -1,8 +1,8 @@
 # GANSpace implementation
 
-The clone folder consists of an extended version of the GANSpace GitHub library, commit [65b0c4c7a4bbdcb5fedebb7c033dab59e27d61c0](https://github.com/harskish/ganspace/tree/65b0c4c7a4bbdcb5fedebb7c033dab59e27d61c0).
+The clone folder consists of a redirect to the GANSpace GitHub library, commit [65b0c4c7a4bbdcb5fedebb7c033dab59e27d61c0](https://github.com/harskish/ganspace/tree/65b0c4c7a4bbdcb5fedebb7c033dab59e27d61c0) was used for the project.
 
-The clone is included since the main GitHub repository contained some bugs in order to work with Ubuntu 20.04. These bugs have been resolved in this clone and an updated [SETUP.MD](clone/ganspace/SETUP.md) is foreseen.
+Besides the clone some extra files are given here since the main GitHub repository contained some bugs with Ubuntu 20.04. These bugs have been resolved in this clone and an updated [SETUP.MD](SETUP.md) is foreseen.
 
 ## Table of contents
 > - [Student info](#student-info)
@@ -19,4 +19,4 @@ Since StyleGAN is funded by NVIDIA, in order for StyleGAN and thus GANSpace to p
 
 ## Edited parts
 - Included the used [Pycuda folder](clone/ganspace/pycuda-2020.1)
-- Updated [SETUP.MD](clone/ganspace/SETUP.md)
+- Updated [SETUP.MD](SETUP.md)
