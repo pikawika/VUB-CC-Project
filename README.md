@@ -15,11 +15,11 @@ This is the GitHub repository for the individual Computational Creativity projec
 
 ## Finished assignments 
 - Assignment 1: Defining your Creative Domain
-   - [Self-contained PDF](Assignment%201/CC_Assignment1_Bontinck_Lennert_568702_VUB.pdf)
+   - [Self-contained PDF](Assignments/Assignment%201/CC_Assignment1_Bontinck_Lennert_568702_VUB.pdf)
 - Assignment 2: Surveying Relevant Literature
-   - [Self-contained PDF](Assignment%202/CC_Assignment2_Bontinck_Lennert_568702_VUB.pdf)
+   - [Self-contained PDF](Assignments/Assignment%202/CC_Assignment2_Bontinck_Lennert_568702_VUB.pdf)
 - Assignment 3: Designing your Creative System
-   - [Self-contained PDF](Assignment%203/CC_Assignment3_Bontinck_Lennert_568702_VUB.pdf)
+   - [Self-contained PDF](Assignments/Assignment%203/CC_Assignment3_Bontinck_Lennert_568702_VUB.pdf)
 
 ## Presentations
 - Intermediate presentation explaining creative domain and more (30/03)
