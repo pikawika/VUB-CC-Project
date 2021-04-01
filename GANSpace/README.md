@@ -8,6 +8,7 @@ An appropriate [SETUP.MD](clone/SETUP.md) was made to work with Ubuntu 20.04 and
 > - [Used system](#used-system)
 > - [GANSpace install](#ganspace-install)
 > - [Edited parts](#edited-parts)
+> - [Working with GANSpace](#working-with-ganspace)
 
 ## Student info
 - **Name**: Bontinck Lennert
