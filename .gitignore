@@ -1,4 +1,6 @@
 .DS_Store
 /GANSpace/clone/models/checkpoints/**
 **/__pychache__/**
-/GANSPACE/clone/cache/**
+/GANSpace/clone/cache/**
+**/__pycache__/**
+**/**.swp
