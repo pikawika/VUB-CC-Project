@@ -31,5 +31,5 @@ Some of the more interesting layers and components are given here:
 | Layer start | Layer end | Component | Title                  | Description                                                                                   |
 |-------------|-----------|-----------|------------------------|-----------------------------------------------------------------------------------------------|
 | 5           | 7         | 34        | Front and door molding | These settings seem to control the front of the car and the door moldings if the car has them |
-| 6           | 6         | 13         | Rims                    | This setting seems to influence the rims                                                                                           |
-| X           | Y         | Z         | XXX                    | YYY                                                                                           |
+| 6           | 6         | 13         | Tire                    | This setting seems to influence the tire size                                                                                           |
+| 8           | 8         | 0         | Rim                    | This setting influences the rim design without much collateral damage.                                                                                           |
