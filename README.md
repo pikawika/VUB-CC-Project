@@ -6,6 +6,7 @@ This is the GitHub repository for the individual Computational Creativity projec
 > - [Student info](#student-info)
 > - [Finished assignments](#finished-assignments)
 > - [Presentations](#presentations)
+> - [GANSpace tool](#ganspace-tool)
 
 ## Student info
 - **Name**: Bontinck Lennert
