@@ -53,8 +53,10 @@ EXTRA: go to root of ganspace
 
 1. Install CUDA toolkit (match the version in environment.yml)
    - EXTRA: already done in previous step
-   - EXTRA: error cublas_v2
 3. `conda activate ganspace`
+   - EXTRA: `export CUDA_HOME=/usr/local/cuda-10.1`
+   - EXTRA: `sudo cp /usr/local/cuda-10.2/targets/x86_64-linux/include/cublas_v2.h /usr/local/cuda-10.1/targets/x86_64-linux/include/cublas_v2.h`
+   - EXTRA: `sudo cp /usr/local/cuda-10.2/targets/x86_64-linux/include/cublas_api.h /usr/local/cuda-10.1/targets/x86_64-linux/include/cublas_api.h`
 4. `cd models/stylegan2/stylegan2-pytorch/op`
 5. `python setup.py install`
 6. Test: `python -c "import torch; import upfirdn2d_op; import fused; print('OK')"`
