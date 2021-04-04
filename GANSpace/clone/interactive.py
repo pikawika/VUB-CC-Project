@@ -340,8 +340,18 @@ def setup_ui():
     # tk.Button(toolbar, text="Recompute", command=recompute_components).pack(anchor=tk.CENTER, fill=tk.X)
 
 def save_canvas_to_file():
-    # TODO: save the canvas as an image
-    print("You pressed save")
+    # import required libraries
+    import copy
+    from torchvision.utils import save_image
+    from tkinter import filedialog
+
+    # use global image and make a deepcopy for saving
+    global img
+    img_clone = copy.deepcopy(img)
+
+    # save the image on chosen location
+    location = filedialog.asksaveasfilename(initialdir="exported-images/", title="Select file", filetypes=[("PNG file", "*.png")])
+    save_image(img_clone, location)
 
 # App state
 state = SimpleNamespace(

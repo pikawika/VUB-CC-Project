@@ -27,8 +27,12 @@ The clone folder consists of an edited copy of the GANSpace GitHub library, comm
 In the edited clone some extra files are given since the main GitHub repository contained some bugs with Ubuntu 20.04. These bugs have been resolved in this clone and an updated [SETUP.MD](clone/SETUP.md) is foreseen.
 
 ## Edited parts
-- Included the used [Pycuda folder](clone/pycuda-2020.1/)
-- Updated [SETUP.MD](SETUP.md)
+- Included the used [Pycuda folder](clone/pycuda-2020.1/).
+- Updated [SETUP.MD](SETUP.md).
+- Made [an easy script](clone/rungan.sh) to launch the used GAN.
+- Updated [interactive.py](clone/interactive.py).
+   - Added the option to save current canvas as PNG to a user chosen file path.
+   - Changed some GUI related items.
 
 
 ## Working with GANSpace
