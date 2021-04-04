@@ -67,6 +67,10 @@ class Config:
         parser.add_argument('--sigma', type=float, default=2.0, help='Number of stdevs to walk in visualize.py')
         parser.add_argument('--inputs', type=str, default=None, help='Path to directory with named components')
         parser.add_argument('--seed', type=int, default=None, help='Seed used in decomposition')
+
+        # ADDED by L.B.: use creative car design
+        parser.add_argument('--creative_car_design', dest='creative_car_design', type=int, default=0, help='Whether or not to use the Creative Car Design project setting')
+
         args = parser.parse_args(args)
 
         return self.from_dict(args.__dict__)

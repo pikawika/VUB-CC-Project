@@ -133,11 +133,14 @@ def load_named_components(path, class_name):
 
 
 def setup_model():
-    global model, inst, layer_name, model_name, feat_shape, args, class_name
+    global model, inst, layer_name, model_name, feat_shape, args, class_name, creative_car_design
 
     model_name = args.model
     layer_name = args.layer
     class_name = args.output_class
+
+    # ADDED by L.B. : save Creative Car Design setting
+    creative_car_design = args.creative_car_design
 
     # Speed up pytorch
     torch.autograd.set_grad_enabled(False)
@@ -237,6 +240,8 @@ def setup_ui():
     ui_state = SimpleNamespace(
         sliders=[tk.DoubleVar(value=0.0) for _ in range(N_COMPONENTS)],
         scales=[],
+        # ADDED by L.B.
+        creative_car_design=tk.StringVar(value="Creative Car Design"),
         truncation=tk.DoubleVar(value=0.9),
         outclass=tk.StringVar(value=class_name),
         random_seed=tk.StringVar(value='0'),
@@ -315,8 +320,15 @@ def setup_ui():
 
     # Output class
     frame = tk.Frame(toolbar)
-    tk.Label(frame, text="Class name").pack(fill="x", side="left")
-    tk.Entry(frame, textvariable=ui_state.outclass).pack(fill="x", side="right", expand=True, padx=5)
+
+
+    # ADDED by L.B. :
+    if creative_car_design == 1:
+        tk.Label(frame, text="Setting").pack(fill="x", side="left")
+        tk.Entry(frame, textvariable=ui_state.creative_car_design).pack(fill="x", side="right", expand=True, padx=5)
+    else:
+        tk.Label(frame, text="Class name").pack(fill="x", side="left")
+        tk.Entry(frame, textvariable=ui_state.outclass).pack(fill="x", side="right", expand=True, padx=5)
     frame.pack(fill=tk.X, pady=3)
 
     # Random seed
