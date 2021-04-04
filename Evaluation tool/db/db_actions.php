@@ -5,8 +5,6 @@ $username = "root";
 $password = "root";
 $dbname = "cc";
 
-//error gehad? Je kan count van particapants id resetten door: ALTER TABLE participants AUTO_INCREMENT = HOOGSTE+1
-
 function create_tables()
 {
     global $servername, $username, $password, $dbname;
