@@ -4,3 +4,4 @@
 /GANSpace/clone/cache/**
 **/__pycache__/**
 **/**.swp
+**/.idea/**
