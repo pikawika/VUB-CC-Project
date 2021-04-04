@@ -347,7 +347,8 @@ def setup_ui():
     tk.Button(toolbar, text="Resample latent", command=partial(resample_latent, None, False)).pack(anchor=tk.CENTER, fill=tk.X, padx=4, pady=4)
 
     # ADDED by L.B. : Show save button for current canvas
-    tk.Button(toolbar, text="Save current canvas", command=save_canvas_to_file).pack(anchor=tk.CENTER, fill=tk.X, padx=4, pady=4)
+    if creative_car_design == 1:
+        tk.Button(toolbar, text="Save current canvas", command=save_canvas_to_file).pack(anchor=tk.CENTER, fill=tk.X, padx=4, pady=4)
 
     # tk.Button(toolbar, text="Recompute", command=recompute_components).pack(anchor=tk.CENTER, fill=tk.X)
 
