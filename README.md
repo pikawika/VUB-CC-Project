@@ -27,7 +27,9 @@ This is the GitHub repository for the individual Computational Creativity projec
 
 ## Presentations
 - Intermediate presentation explaining creative domain and more (30/03)
-   - [PDF export of presentation](Presentations/intermediate_presentation_30-03.pdf)
+   - [PDF export of presentation](Presentations/03-30_intermediate_presentation.pdf)
+- Intermediate presentation explaining relevant literature and more (18/04)
+   - [PDF export of presentation](Presentations/04-18_litarature_presentation.pdf)
 
 ## GANSpace tool
 The GANSPace tool used is a modified version of the publicly available GANSpace tool, commit [65b0c4c](https://github.com/harskish/ganspace/tree/65b0c4c7a4bbdcb5fedebb7c033dab59e27d61c0). This version had some issues to work with Ubuntu 20.04, hence why it was modified. 
