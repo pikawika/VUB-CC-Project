@@ -4,7 +4,6 @@ include 'layout/header.php';
 //this is a dummy key for local instances
 $key = "dummykey";
 
-
 if ($_GET["key"] == $key) {
     include 'db/db_actions.php';
 
@@ -14,19 +13,18 @@ if ($_GET["key"] == $key) {
     //db_actions file function
     create_tables();
 
-    //write test images to db
-    foreach (glob('images/test/*.*') as $path) {
+    //write grouped images to db
+    foreach (glob('images/grouped/*.*') as $path) {
         $filename = pathinfo($path, PATHINFO_FILENAME);
-        $practice_data = 1;
-        //db_actions file function
-        create_image_record($filename, $path, $practice_data);
+        $grouped = 1;
+        create_image_record($filename, $path, $grouped);
     }
 
-    //write evaluation images to db
-    foreach (glob('images/evaluation/*.*') as $path) {
+    //write single images to db
+    foreach (glob('images/single/*.*') as $path) {
         $filename = pathinfo($path, PATHINFO_FILENAME);
-        $practice_data = 0;
-        create_image_record($filename, $path, $practice_data);
+        $grouped = 0;
+        create_image_record($filename, $path, $grouped);
     }
 
 

@@ -5,7 +5,7 @@ include 'layout/header.php';
     <div class="p-5 mb-4 bg-grey text-white">
         <h1 class="mb-4">Explaining what is expected from you</h1>
         <p class="mb-4">
-            The following short video will explain what is expected from you for this survey.
+            The following short video will explain what is expected from you for this survey. Please watch it until the end.
         </p>
         <p>
             If you would have any more questions don't hesitate to contact me:

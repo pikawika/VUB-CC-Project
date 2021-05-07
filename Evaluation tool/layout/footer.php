@@ -5,7 +5,7 @@
         <hr>
         &copy; <?php echo date("Y"); ?>:
         <a href="https://www.lennertbontinck.com/" target="_blank">Lennert Bontinck</a> - Made for <a
-                href="creative-car-design-vub.lennertbontinck.com" target="_blank">Computational Creativity project</a>
+                href="https://creative-car-design-vub.lennertbontinck.com" target="_blank">Computational Creativity project</a>
         </p>
     </div>
 </footer>

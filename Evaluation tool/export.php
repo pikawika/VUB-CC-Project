@@ -14,9 +14,9 @@ if ($_GET["key"] == $key) {
         <div class="p-5 mb-4 bg-primary text-white text-center">
             <h1 class="mb-4">Export completed!</h1>
             <a href="results/images.csv" class="btn btn-info w-100 mb-3" download>Download images.csv &darr;</a>
-            <a href="results/participants.csv" class="btn btn-info w-100 mb-3" download>Download participants.csv
-                &darr;</a>
-            <a href="results/ratings.csv" class="btn btn-info w-100 mb-3" download>Download ratings.csv &darr;</a>
+            <a href="results/participants.csv" class="btn btn-info w-100 mb-3" download>Download participants.csv&darr;</a>
+            <a href="results/ratings_grouped.csv" class="btn btn-info w-100 mb-3" download>Download ratings of grouped.csv &darr;</a>
+            <a href="results/ratings_single.csv" class="btn btn-info w-100 mb-3" download>Download ratings of single.csv &darr;</a>
         </div>
         <?php
     }
@@ -42,17 +42,26 @@ if ($_GET["key"] == $key) {
 
         //images
         $file = fopen("results/images.csv", "w");
-        fputcsv($file, array('image_id', 'filename', 'path', 'practice_data'));
+        fputcsv($file, array('image_id', 'filename', 'path', 'grouped'));
         $records = get_all_images();
         while ($row = mysqli_fetch_assoc($records)) {
             fputcsv($file, $row);
         }
         fclose($file);
 
-        //ratings
-        $file = fopen("results/ratings.csv", "w");
-        fputcsv($file, array('participant_id', 'image_id', 'quality', 'colors', 'creativity', 'general', 'note'));
-        $records = get_all_ratings();
+        // ratings grouped
+        $file = fopen("results/ratings_grouped.csv", "w");
+        fputcsv($file, array('participant_id', 'image_id', 'correspondence', 'realism', 'creative', 'made_by', 'note'));
+        $records = get_all_ratings_grouped();
+        while ($row = mysqli_fetch_assoc($records)) {
+            fputcsv($file, $row);
+        }
+        fclose($file);
+
+        // ratings grouped
+        $file = fopen("results/ratings_single.csv", "w");
+        fputcsv($file, array('participant_id', 'image_id', 'carlike', 'detail', 'realism', 'resemblence', 'creative', 'general_impression', 'note'));
+        $records = get_all_ratings_single();
         while ($row = mysqli_fetch_assoc($records)) {
             fputcsv($file, $row);
         }
