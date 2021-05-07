@@ -171,7 +171,8 @@ function show_grouped_photo_rating($image_id, $path)
                     </div>
                     <small>
                         An image is considered of good correspondence (5) if the cars displayed in the row "start" are
-                        clearly recognisable in the variants displayed below.
+                        clearly recognisable in the variants displayed below and modifications performed are similar between
+                        all four cars.
                     </small>
                 </div>
             </div>
@@ -205,8 +206,8 @@ function show_grouped_photo_rating($image_id, $path)
                         </div>
                     </div>
                     <small>
-                        An image is considered very realistic (5) if all cars displayed look as if a car designer has
-                        professionally made it and you wouldn't doubt it could be a real car.
+                        An image is considered very realistic (5) if all cars displayed look as if a (car) designer has
+                        professionally made it and you wouldn't doubt it could be an image you'd see in a car magazine.
                     </small>
                 </div>
             </div>
@@ -277,8 +278,8 @@ function show_grouped_photo_rating($image_id, $path)
                 <div class="col-sm-10">
                     <textarea class="col-sm-12" id="note" name="note" rows="5"></textarea>
                     <small>
-                        This field can be used to discuss recognised cars, reasoning for exceptionally low or high
-                        scores and more.
+                        This field can be used to discuss recognised cars, what you think the performed modification is,
+                        reasoning for exceptionally low or high scores and more.
                     </small>
                 </div>
             </div>
@@ -292,7 +293,7 @@ function show_grouped_photo_rating($image_id, $path)
 
         <button type="submit" name="submit_iterative_photo_rating_form" value="Submit"
                 class="btn btn-outline-primary w-100">
-            Beoordeel de volgende afbeelding
+            Go to next image
         </button>
     </form>
     <?php
@@ -346,7 +347,7 @@ function show_single_photo_rating($image_id, $path)
                         </div>
                     </div>
                     <small>
-                        Rate from 0 - 5 how "car-like" the object shown is, does it have all required components in your opinion.
+                        Rate from 0 - 5 how "car-like" the object shown is, does it have all required components in your opinion?
                         Try to keep this separate from realism.
                     </small>
                 </div>
@@ -382,8 +383,9 @@ function show_single_photo_rating($image_id, $path)
                         </div>
                     </div>
                     <small>
-                        Rate from 0 - 5 how "detailed" the image shown is, are their minor details such as small badges,
-                        door handles, dents, reflections, ... you notice or is it rather flat.
+                        A detailed image (+) contains minor details such as small badges,
+                        door handles, dents, reflections, ... If you feel as if the image is rather "flat", you would
+                        give it a lower score.
                     </small>
                 </div>
             </div>
@@ -418,8 +420,8 @@ function show_single_photo_rating($image_id, $path)
                         </div>
                     </div>
                     <small>
-                        An image is considered very realistic (5) if all cars displayed look as if a car designer has
-                        professionally made it and you wouldn't doubt it could be a real car.
+                        An image is considered very realistic (5) if all cars displayed look as if a (car) designer has
+                        professionally made it and you wouldn't doubt it could be an image you'd see in a car magazine.
                     </small>
                 </div>
             </div>
@@ -557,7 +559,7 @@ function show_single_photo_rating($image_id, $path)
 
         <button type="submit" name="submit_iterative_photo_rating_form" value="Submit"
                 class="btn btn-outline-primary w-100">
-            Beoordeel de volgende afbeelding
+            Go to next image
         </button>
     </form>
     <?php

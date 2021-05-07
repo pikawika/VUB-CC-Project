@@ -36,7 +36,7 @@ include 'layout/header.php';
             </li>
         </ul>
         </p>
-        <p class="mb-2">In total you'll rate 12 images, which should take no more than 15 minutes.</p>
+        <p class="mb-2">In total you'll rate 12 images, expect this to take around 15 minutes.</p>
     </div>
     <button type="button" class="btn btn-outline-primary w-100 mb-3" onclick="window.location.href='introduction.php'">
         I agree my data listed above will be stored and made publicly available
