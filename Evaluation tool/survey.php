@@ -7,10 +7,20 @@ include 'db/db_actions.php';
 if (isset($_POST['submit_profile_form'])) {
     // user completed about you
     save_info_about_you_and_show_first_image();
+} else if (isset($_POST['biased'])) {
+    // user got lied to screen
+    save_biased_information_and_continue();
 } else if (isset($_POST['image_id']) && isset($_COOKIE['participant_id'])) {
     //user rated an image
-    save_post_rating_image();
-    show_next_iterative_photo_rating();
+    if ($_POST['made_by'] == "known") {
+        //rated knowing the truth
+        save_post_rating_image();
+        show_next_iterative_photo_rating($_COOKIE['participant_id'], true);
+    } else {
+        //rated with knowing the truth
+        save_post_rating_image();
+        show_next_iterative_photo_rating();
+    }
 } else if (isset($_COOKIE['participant_id'])) {
     show_next_iterative_photo_rating();
 } else {
@@ -27,7 +37,17 @@ function save_info_about_you_and_show_first_image()
     show_next_iterative_photo_rating($participant_id);
 }
 
-function show_next_iterative_photo_rating($participant_id = -1)
+function save_biased_information_and_continue()
+{
+    //save biased info
+    add_user_bias($_COOKIE['participant_id'], $_POST['biased'], $_POST['note']);
+
+    //switch to image rating with known all machine made
+    show_next_iterative_photo_rating($_COOKIE['participant_id'], true);
+
+}
+
+function show_next_iterative_photo_rating($participant_id = -1, $user_knows_truth = false)
 {
     if ($participant_id == -1) {
         $participant_id = ($_COOKIE['participant_id']);
@@ -96,17 +116,34 @@ function show_next_iterative_photo_rating($participant_id = -1)
         }
     }
 
-    // show grouped images first
-    if (sizeof($to_rate_grouped_images) != 0) {
-        $random_index = array_rand($to_rate_grouped_images, 1);
-        show_grouped_photo_rating($to_rate_grouped_images[$random_index]['image_id'], $to_rate_grouped_images[$random_index]['path']);
-    } else if (sizeof($to_rate_single_images) != 0) {
-        // show evaluation images of no test images remaining
-        $random_index = array_rand($to_rate_single_images, 1);
-        show_single_photo_rating($to_rate_single_images[$random_index]['image_id'], $to_rate_single_images[$random_index]['path']);
+    if ($user_knows_truth) {
+        if (sizeof($to_rate_grouped_images) != 0) {
+            // show grouped images first
+            $random_index = array_rand($to_rate_grouped_images, 1);
+            show_grouped_photo_rating($to_rate_grouped_images[$random_index]['image_id'], $to_rate_grouped_images[$random_index]['path'], true);
+        } else if (sizeof($to_rate_single_images) != 0) {
+            // show singles next
+            $random_index = array_rand($to_rate_single_images, 1);
+            show_single_photo_rating($to_rate_single_images[$random_index]['image_id'], $to_rate_single_images[$random_index]['path'], true);
+        } else {
+            // no more images to rate, show thanks
+            show_thanks_screen();
+        }
     } else {
-        // no more images to rate, show thanks
-        show_thanks_screen();
+        if (sizeof($to_rate_grouped_images) == 2 && sizeof($to_rate_single_images) == 4) {
+            //half rated images - let user know truth
+            show_lied_to_screen();
+        } else if (sizeof($to_rate_grouped_images) > 2) {
+            // show grouped images first
+            $random_index = array_rand($to_rate_grouped_images, 1);
+            show_grouped_photo_rating($to_rate_grouped_images[$random_index]['image_id'], $to_rate_grouped_images[$random_index]['path']);
+        } else {
+            // show singles next
+            $random_index = array_rand($to_rate_single_images, 1);
+            show_single_photo_rating($to_rate_single_images[$random_index]['image_id'], $to_rate_single_images[$random_index]['path']);
+        }
+
+
     }
 
 
@@ -124,7 +161,64 @@ function show_thanks_screen()
     <?php
 }
 
-function show_grouped_photo_rating($image_id, $path)
+function show_lied_to_screen()
+{
+    ?>
+    <div class="p-5 mb-4 bg-grey text-white">
+        <h1 class="mb-4 text-white">You've been lied to...</h1>
+        <p class="mb-4">
+            Everything you've seen was created by a computer, even the "start" images. I'm sorry for lying, but some
+            people are biased and don't recognize achievements made by a computer. Please leave your thoughts on
+            whether or not you were biased and continue rating images. You're over halfway, doing great, thanks!
+        </p>
+        <form enctype='multipart/form-data' method="post">
+
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Biased</label>
+                <div class="col-sm-10">
+
+                    <div class="w-100">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" id="biased1" name="biased" value="nonbiased"
+                                   required>
+                            <label class="form-check-label" for="biased1">Not biased</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" id="biased2" name="biased" value="biased">
+                            <label class="form-check-label" for="biased2">Biased</label>
+                        </div>
+                    </div>
+                    <small>
+                        Whether you think you were biased by giving images you thought to be created by a human a higher
+                        score.
+                    </small>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Notes</label>
+                <div class="col-sm-10">
+                    <textarea class="col-sm-12" id="note" name="note" rows="5"></textarea>
+                    <small>
+                        This field can be used to discuss your opinion or any thoughts you have.
+                    </small>
+                </div>
+            </div>
+
+            <hr>
+
+            <button type="submit" name="submit_iterative_photo_rating_form" value="Submit"
+                    class="btn btn-outline-primary w-100">
+                Go to next image
+            </button>
+        </form>
+    </div>
+    <?php
+}
+
+function show_grouped_photo_rating($image_id, $path, $user_knows_truth = false)
 {
     ?>
     <form enctype='multipart/form-data' method="post">
@@ -132,11 +226,11 @@ function show_grouped_photo_rating($image_id, $path)
             <h1 class="mb-4">Rate these modified car designs</h1>
 
             <div class="mb-5 row">
-                <div class="col">
+                <div class="col-sm-6">
                     <img class="img_evaluation" src="<?php echo $path ?>"
                          data-zoom="<?php echo $path ?>">
                 </div>
-                <div class="col">
+                <div class="col-sm-6">
                     <p class="img_evaluation_zoomed">Move your cursor over the image to zoom in.</p>
                 </div>
                 <hr>
@@ -148,31 +242,36 @@ function show_grouped_photo_rating($image_id, $path)
 
                     <div class="w-100">
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" id="correspondence1" name="correspondence" value="1"
+                            <input class="form-check-input" type="radio" id="correspondence1" name="correspondence"
+                                   value="1"
                                    required>
                             <label class="form-check-label" for="correspondence1">1 (-)</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" id="correspondence2" name="correspondence" value="2">
+                            <input class="form-check-input" type="radio" id="correspondence2" name="correspondence"
+                                   value="2">
                             <label class="form-check-label" for="correspondence2">2</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" id="correspondence3" name="correspondence" value="3">
+                            <input class="form-check-input" type="radio" id="correspondence3" name="correspondence"
+                                   value="3">
                             <label class="form-check-label" for="correspondence3">3</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" id="correspondence4" name="correspondence" value="4">
+                            <input class="form-check-input" type="radio" id="correspondence4" name="correspondence"
+                                   value="4">
                             <label class="form-check-label" for="correspondence4">4</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" id="correspondence5" name="correspondence" value="5">
+                            <input class="form-check-input" type="radio" id="correspondence5" name="correspondence"
+                                   value="5">
                             <label class="form-check-label" for="correspondence5">5 (+)</label>
                         </div>
                     </div>
                     <small>
                         An image is considered of good correspondence (5) if the cars displayed in the row "start" are
-                        clearly recognisable in the variants displayed below and modifications performed are similar between
-                        all four cars.
+                        clearly recognisable in the variants displayed below and modifications performed are similar
+                        between all four cars.
                     </small>
                 </div>
             </div>
@@ -241,35 +340,39 @@ function show_grouped_photo_rating($image_id, $path)
                         </div>
                     </div>
                     <small>
-                        Whether you find the image/modifications creative is a subjective manner, if you recognize (elements of)
-                        existing cars please leave them in the notes section. Remember some of the examples given in the
-                        explanatory video.
+                        Whether you find the image/modifications creative is a subjective manner, if you recognize
+                        (elements of) existing cars please leave them in the notes section. Remember some of the
+                        examples given in the explanatory video.
                     </small>
                 </div>
             </div>
 
-            <hr>
+            <?php if (!$user_knows_truth): ?>
+                <hr>
 
-            <div class="form-group row">
-                <label class="col-sm-2 col-form-label">Made by</label>
-                <div class="col-sm-10">
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Made by</label>
+                    <div class="col-sm-10">
 
-                    <div class="w-100">
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" id="made_by1" name="made_by" value="human"
-                                   required>
-                            <label class="form-check-label" for="made_by1">Human</label>
+                        <div class="w-100">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" id="made_by1" name="made_by" value="human"
+                                       required>
+                                <label class="form-check-label" for="made_by1">Human</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" id="made_by2" name="made_by"
+                                       value="computer">
+                                <label class="form-check-label" for="made_by2">Computer</label>
+                            </div>
                         </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" id="made_by2" name="made_by" value="computer">
-                            <label class="form-check-label" for="made_by2">Computer</label>
-                        </div>
+                        <small>
+                            Whether you think the image/modifications are made by a human or a computer.
+                        </small>
                     </div>
-                    <small>
-                        Whether you think the image/modifications are made by a human or a computer.
-                    </small>
                 </div>
-            </div>
+
+            <?php endif; ?>
 
             <hr>
 
@@ -288,6 +391,10 @@ function show_grouped_photo_rating($image_id, $path)
 
             <input type="hidden" name="image_id" value="<?php echo $image_id ?>">
 
+            <?php if ($user_knows_truth): ?>
+                <input type="hidden" name="made_by" value="known">
+            <?php endif; ?>
+
 
         </div>
 
@@ -299,7 +406,7 @@ function show_grouped_photo_rating($image_id, $path)
     <?php
 }
 
-function show_single_photo_rating($image_id, $path)
+function show_single_photo_rating($image_id, $path, $user_knows_truth = false)
 {
     ?>
     <form enctype='multipart/form-data' method="post">
@@ -347,8 +454,8 @@ function show_single_photo_rating($image_id, $path)
                         </div>
                     </div>
                     <small>
-                        Rate from 0 - 5 how "car-like" the object shown is, does it have all required components in your opinion?
-                        Try to keep this separate from realism.
+                        Rate from 0 - 5 how "car-like" the object shown is, does it have all required components in your
+                        opinion? Try to keep this separate from realism.
                     </small>
                 </div>
             </div>
@@ -456,9 +563,9 @@ function show_single_photo_rating($image_id, $path)
                         </div>
                     </div>
                     <small>
-                        An image is considered very resemblant (5) of another car if you clearly recognize a certain existing
-                        car in the image. It's loosly resemblant (3) if you recognize style treats of a car or brand. Feel free
-                        to discuss this further in the notes section.
+                        An image is considered very resemblant (5) of another car if you clearly recognize a certain
+                        existing car in the image. It's loosly resemblant (3) if you recognize style treats of a car or
+                        brand. Feel free to discuss this further in the notes section.
                     </small>
                 </div>
             </div>
@@ -508,37 +615,67 @@ function show_single_photo_rating($image_id, $path)
 
                     <div class="w-100">
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" id="general_impression1" name="general_impression" value="1"
+                            <input class="form-check-input" type="radio" id="general_impression1"
+                                   name="general_impression" value="1"
                                    required>
                             <label class="form-check-label" for="general_impression1">1 (-)</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" id="general_impression2" name="general_impression" value="2">
+                            <input class="form-check-input" type="radio" id="general_impression2"
+                                   name="general_impression" value="2">
                             <label class="form-check-label" for="general_impression2">2</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" id="general_impression3" name="general_impression" value="3">
+                            <input class="form-check-input" type="radio" id="general_impression3"
+                                   name="general_impression" value="3">
                             <label class="form-check-label" for="general_impression3">3</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" id="general_impression4" name="general_impression" value="4">
+                            <input class="form-check-input" type="radio" id="general_impression4"
+                                   name="general_impression" value="4">
                             <label class="form-check-label" for="general_impression4">4</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" id="general_impression5" name="general_impression" value="5">
+                            <input class="form-check-input" type="radio" id="general_impression5"
+                                   name="general_impression" value="5">
                             <label class="form-check-label" for="general_impression5">5 (+)</label>
                         </div>
                     </div>
                     <small>
-                        How would you rate this image in general, would you find it suited if it were shown in a car-related magazine?
+                        How would you rate this image in general, would you find it suited if it were shown in a
+                        car-related magazine?
                     </small>
                 </div>
             </div>
 
+            <?php if (!$user_knows_truth): ?>
+                <hr>
+
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Made by</label>
+                    <div class="col-sm-10">
+
+                        <div class="w-100">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" id="made_by1" name="made_by" value="human"
+                                       required>
+                                <label class="form-check-label" for="made_by1">Human</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" id="made_by2" name="made_by"
+                                       value="computer">
+                                <label class="form-check-label" for="made_by2">Computer</label>
+                            </div>
+                        </div>
+                        <small>
+                            Whether you think the image/modifications are made by a human or a computer.
+                        </small>
+                    </div>
+                </div>
+
+            <?php endif; ?>
+
             <hr>
-
-
-
 
 
             <div class="form-group row">
@@ -553,7 +690,9 @@ function show_single_photo_rating($image_id, $path)
             </div>
 
             <input type="hidden" name="image_id" value="<?php echo $image_id ?>">
-
+            <?php if ($user_knows_truth): ?>
+                <input type="hidden" name="made_by" value="known">
+            <?php endif; ?>
 
         </div>
 
@@ -568,12 +707,12 @@ function show_single_photo_rating($image_id, $path)
 function save_post_rating_image()
 {
     //determine if grouped or single rating
-    if (isset($_POST['made_by'])) {
+    if (isset($_POST['correspondence'])) {
         // grouped image
         add_user_rating_grouped($_COOKIE['participant_id'], $_POST['image_id'], $_POST['correspondence'], $_POST['realism'], $_POST['creativity'], $_POST['made_by'], $_POST['note']);
     } else {
         // single image
-        add_user_rating_single($_COOKIE['participant_id'], $_POST['image_id'], $_POST['carlike'], $_POST['detail'], $_POST['realism'], $_POST['resemblence'], $_POST['creative'], $_POST['general_impression'], $_POST['note']);
+        add_user_rating_single($_COOKIE['participant_id'], $_POST['image_id'], $_POST['carlike'], $_POST['detail'], $_POST['realism'], $_POST['resemblence'], $_POST['creative'], $_POST['general_impression'], $_POST['made_by'], $_POST['note']);
     }
 
 

@@ -65,12 +65,23 @@ function create_tables()
                 resemblence INT NOT NULL,
                 creative INT NOT NULL,
                 general_impression INT NOT NULL,
+                made_by VARCHAR(255) NOT NULL,
                 note VARCHAR(255) NULL,
                 primary key (participant_id, image_id)
                 )";
 
     if ($conn->query($sql) !== TRUE) {
         die("table creation Ratings single failed: " . $conn->error);
+    }
+
+    $sql = "CREATE TABLE IF NOT EXISTS `bias` (
+                participant_id INT PRIMARY KEY,
+                biased VARCHAR(255) NOT NULL,
+                note VARCHAR(255) NOT NULL
+                )";
+
+    if ($conn->query($sql) !== TRUE) {
+        die("table creation bias failed: " . $conn->error);
     }
 
     $conn->close();
@@ -152,6 +163,12 @@ function delete_tables()
         die("table deletion ratings_single failed: " . $conn->error);
     }
 
+    $sql = "DROP TABLE IF EXISTS `biased`";
+
+    if ($conn->query($sql) !== TRUE) {
+        die("table deletion biased failed: " . $conn->error);
+    }
+
     $conn->close();
 }
 
@@ -206,6 +223,22 @@ function get_all_ratings_grouped()
     return $result;
 }
 
+function get_all_bias() {
+    global $servername, $username, $password, $dbname;
+    // Create connection
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+    $sql = "SELECT participant_id, biased, note FROM bias";
+    $result = $conn->query($sql);
+
+    $conn->close();
+    return $result;
+}
+
 function get_all_ratings_single()
 {
     global $servername, $username, $password, $dbname;
@@ -216,7 +249,7 @@ function get_all_ratings_single()
         die("Connection failed: " . $conn->connect_error);
     }
 
-    $sql = "SELECT participant_id, image_id, carlike, detail, realism, resemblence, creative, general_impression, note FROM ratings_single";
+    $sql = "SELECT participant_id, image_id, carlike, detail, realism, resemblence, creative, general_impression, made_by, note FROM ratings_single";
     $result = $conn->query($sql);
 
     $conn->close();
@@ -276,7 +309,7 @@ function add_user_rating_grouped($participant_id, $image_id, $correspondence, $r
     $conn->close();
 }
 
-function add_user_rating_single($participant_id, $image_id, $carlike, $detail, $realism, $resemblence, $creative, $general_impression, $note)
+function add_user_rating_single($participant_id, $image_id, $carlike, $detail, $realism, $resemblence, $creative, $general_impression, $made_by, $note)
 {
     global $servername, $username, $password, $dbname;
     // Create connection
@@ -286,10 +319,29 @@ function add_user_rating_single($participant_id, $image_id, $carlike, $detail, $
         die("Connection failed: " . $conn->connect_error);
     }
 
-    $sql = "INSERT INTO ratings_single(participant_id, image_id, carlike, detail, realism, resemblence, creative, general_impression, note) VALUES ('$participant_id', '$image_id', '$carlike', '$detail', '$realism','$resemblence', '$creative', '$general_impression', '$note')";
+    $sql = "INSERT INTO ratings_single(participant_id, image_id, carlike, detail, realism, resemblence, creative, general_impression, made_by, note) VALUES ('$participant_id', '$image_id', '$carlike', '$detail', '$realism','$resemblence', '$creative', '$general_impression', '$made_by', '$note')";
 
     if ($conn->query($sql) !== TRUE) {
         die("insert rating failed: " . $conn->error);
+    }
+
+    $conn->close();
+}
+
+function add_user_bias($participant_id, $biased, $note)
+{
+    global $servername, $username, $password, $dbname;
+    // Create connection
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+    $sql = "INSERT INTO bias(participant_id, biased, note) VALUES ('$participant_id', '$biased', '$note')";
+
+    if ($conn->query($sql) !== TRUE) {
+        die("insert bias failed: " . $conn->error);
     }
 
     $conn->close();

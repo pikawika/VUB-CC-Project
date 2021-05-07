@@ -4,7 +4,6 @@ include 'layout/header.php';
 //this is a dummy key for local instances
 $key = "dummykey";
 
-
 if ($_GET["key"] == $key) {
     include 'db/db_actions.php';
 
@@ -15,8 +14,9 @@ if ($_GET["key"] == $key) {
             <h1 class="mb-4">Export completed!</h1>
             <a href="results/images.csv" class="btn btn-info w-100 mb-3" download>Download images.csv &darr;</a>
             <a href="results/participants.csv" class="btn btn-info w-100 mb-3" download>Download participants.csv&darr;</a>
-            <a href="results/ratings_grouped.csv" class="btn btn-info w-100 mb-3" download>Download ratings of grouped.csv &darr;</a>
-            <a href="results/ratings_single.csv" class="btn btn-info w-100 mb-3" download>Download ratings of single.csv &darr;</a>
+            <a href="results/ratings_grouped.csv" class="btn btn-info w-100 mb-3" download>Download ratings_grouped.csv &darr;</a>
+            <a href="results/ratings_single.csv" class="btn btn-info w-100 mb-3" download>Download ratings_single.csv &darr;</a>
+            <a href="results/bias.csv" class="btn btn-info w-100 mb-3" download>Download bias.csv &darr;</a>
         </div>
         <?php
     }
@@ -62,6 +62,15 @@ if ($_GET["key"] == $key) {
         $file = fopen("results/ratings_single.csv", "w");
         fputcsv($file, array('participant_id', 'image_id', 'carlike', 'detail', 'realism', 'resemblence', 'creative', 'general_impression', 'note'));
         $records = get_all_ratings_single();
+        while ($row = mysqli_fetch_assoc($records)) {
+            fputcsv($file, $row);
+        }
+        fclose($file);
+
+        // biased
+        $file = fopen("results/bias.csv", "w");
+        fputcsv($file, array('participant_id', 'biased', 'note'));
+        $records = get_all_bias();
         while ($row = mysqli_fetch_assoc($records)) {
             fputcsv($file, $row);
         }
