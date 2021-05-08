@@ -305,8 +305,8 @@ function show_grouped_photo_rating($image_id, $path, $user_knows_truth = false)
                         </div>
                     </div>
                     <small>
-                        An image is considered very realistic (5) if all cars displayed look as if a (car) designer has
-                        professionally made it and you wouldn't doubt it could be an image you'd see in a car magazine.
+                        An image is considered very realistic (5) if you wouldn't doubt it could be an image you'd see
+                        in a car magazine.
                     </small>
                 </div>
             </div>
@@ -341,8 +341,7 @@ function show_grouped_photo_rating($image_id, $path, $user_knows_truth = false)
                     </div>
                     <small>
                         Whether you find the image/modifications creative is a subjective manner, if you recognize
-                        (elements of) existing cars please leave them in the notes section. Remember some of the
-                        examples given in the explanatory video.
+                        (elements of) existing cars please leave them in the notes section.
                     </small>
                 </div>
             </div>
@@ -367,7 +366,7 @@ function show_grouped_photo_rating($image_id, $path, $user_knows_truth = false)
                             </div>
                         </div>
                         <small>
-                            Whether you think the image/modifications are made by a human or a computer.
+                            Whether you think the modifications are made by a human or a computer.
                         </small>
                     </div>
                 </div>
@@ -490,7 +489,7 @@ function show_single_photo_rating($image_id, $path, $user_knows_truth = false)
                         </div>
                     </div>
                     <small>
-                        A detailed image (+) contains minor details such as small badges,
+                        A detailed image (5) contains minor details such as small badges,
                         door handles, dents, reflections, ... If you feel as if the image is rather "flat", you would
                         give it a lower score.
                     </small>
@@ -527,8 +526,8 @@ function show_single_photo_rating($image_id, $path, $user_knows_truth = false)
                         </div>
                     </div>
                     <small>
-                        An image is considered very realistic (5) if all cars displayed look as if a (car) designer has
-                        professionally made it and you wouldn't doubt it could be an image you'd see in a car magazine.
+                        An image is considered very realistic (5) if you wouldn't doubt it could be an image you'd see
+                        in a car magazine.
                     </small>
                 </div>
             </div>
@@ -601,8 +600,7 @@ function show_single_photo_rating($image_id, $path, $user_knows_truth = false)
                     </div>
                     <small>
                         Whether you find the image creative is a subjective manner, if you recognize (elements of)
-                        existing cars please leave them in the notes section. Remember some of the examples given in the
-                        explanatory video.
+                        existing cars please leave them in the notes section.
                     </small>
                 </div>
             </div>
