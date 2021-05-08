@@ -30,7 +30,7 @@ In this directory you'll find all images that were saved by the extended version
       - Component 44
       - Seed 635148272 with a batch size of 4
       - Images can be found [here](GANSpace%20controlled/Sportiness)
-   - Flashy color filter: Color changes to "car body" only
+   - Flashy color filter: color changes to "car body" only
       - Makes the color of the detected "car body" bright red (90% of the time) or bright yellow. Reveals some artifacts are seen as the same "material" of a "car body".
       - Layer 9 - 10
       - Component 22
@@ -42,3 +42,15 @@ In this directory you'll find all images that were saved by the extended version
       - Component 0
       - Seed 2042837 with a batch size of 4
       - Images can be found [here](GANSpace%20controlled/Rim%20design)
+   - Tire size filter: makes tires smaller/bigger
+      - Seems to change wheel size in relation with car, especially enlarging the tires whilst shrinking the wheel. Quite some collateral damage.
+      - Layer 6
+      - Component 13
+      - Seed 850274007 with a batch size of 4
+      - Images can be found [here](GANSpace%20controlled/Tire%20size)
+   - Flat front filter: makes major changes to mainly front
+      - Seems to change the front design by making it larger in area (squarer) or smaller (pointier).
+      - Layer 4 - 5
+      - Component 29
+      - Seed 986867469 with a batch size of 4
+      - Images can be found [here](GANSpace%20controlled/Flat%20front)

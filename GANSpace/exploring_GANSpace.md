@@ -31,13 +31,12 @@ Some of the more interesting layers and components are given here. If a componen
 
 | Layer start | Layer end | Component | Title                  | Description                                                                                   |
 |-------------|-----------|-----------|------------------------|-----------------------------------------------------------------------------------------------|
-| 5           | 7         | 34        | Front and door molding | These settings seem to control the front of the car and the door moldings if the car has them |
+| 5           | 7         | 34        | Front and door molding | These settings seem to control the front of the car and the door moldings if the car has them, much collateral damage |
 | 6           | 6         | 13         | Tire size                    | This setting seems to influence the tire size                                                                                           |
 | 8           | 8         | 0         | Rim design                    | Influences the design of the rims without much impact over other components of the image.                                                                                           |
 | 2           | 7         | 44         | Sportiness                    | Makes the car look more or less sporty by lowering the car, enlarging the alloy size and creating sharper lines in the car. |
 | 9           | 10         | 22         | Flashy color                    | Makes the color of the detected "car body" bright red (90% of the time) or bright yellow. Reveals some artifacts are seen as the same "material" of a "car body". |
-| X           | X         | X         | X                    | X |
-| X           | X         | X         | X                    | X |
+| 4           | 5         | 29         | Flat front                    | Major changes to front design, making it pointier or flatter. |
 
 ## Interesting seeds
 The following is a list of seeds which yield interesting or high quality generated images. If a seed is used for a figure in the paper, it's specifically stated in the description.
@@ -73,11 +72,6 @@ The following is a list of seeds which yield interesting or high quality generat
 | 1699790244 | Old school futuristic | Creative design of what would seem like a "futuristic" vision in the past |
 | 1987292175 | Rear end or side | Artifact where the rear end of the car has become the side |
 | 1955615330 | Attempt at reflection | High quality image of car with reflection in shiny floor |
-| 000000000 | XXXxxxXXXXXXxxxXXX | YYYyyyYYYYYYyyyYYYYYYyyyYYYYYYyyyYYY |
-| 000000000 | XXXxxxXXXXXXxxxXXX | YYYyyyYYYYYYyyyYYYYYYyyyYYYYYYyyyYYY |
-| 000000000 | XXXxxxXXXXXXxxxXXX | YYYyyyYYYYYYyyyYYYYYYyyyYYYYYYyyyYYY |
-| 000000000 | XXXxxxXXXXXXxxxXXX | YYYyyyYYYYYYyyyYYYYYYyyyYYYYYYyyyYYY |
-| 000000000 | XXXxxxXXXXXXxxxXXX | YYYyyyYYYYYYyyyYYYYYYyyyYYYYYYyyyYYY |
 | 1269338343 | No background car (1) | High quality image of car without background |
 | 304896336 | No background car (2) | Decent quality image of car without background  |
 | 807550690 | No background car (3) | High quality image of car without background |
@@ -90,11 +84,6 @@ The following is a list of seeds which yield interesting or high quality generat
 | 286807571 | No background car (10) | Decent quality image of car without background |
 | 1102990066 | No background car (11) | Decent quality image of car without background |
 | 80502057 | No background car (12) | Decent quality image of car without background |
-| 000000000 | XXXxxxXXXXXXxxxXXX | YYYyyyYYYYYYyyyYYYYYYyyyYYYYYYyyyYYY |
-| 000000000 | XXXxxxXXXXXXxxxXXX | YYYyyyYYYYYYyyyYYYYYYyyyYYYYYYyyyYYY |
-| 000000000 | XXXxxxXXXXXXxxxXXX | YYYyyyYYYYYYyyyYYYYYYyyyYYYYYYyyyYYY |
-| 000000000 | XXXxxxXXXXXXxxxXXX | YYYyyyYYYYYYyyyYYYYYYyyyYYYYYYyyyYYY |
-| 000000000 | XXXxxxXXXXXXxxxXXX | YYYyyyYYYYYYyyyYYYYYYyyyYYYYYYyyyYYY |
 | 853184016 | Challenging angle (1) | Challenging angle discussed in paper where AI can't seem to decide front of car  |
 | 1963612912 | Challenging angle (2) | Challenging angle discussed in paper where AI can't seem to decide front of car  |
 | 2022816787 | Challenging angle (3) | Challenging angle discussed in paper where AI can't seem to decide front of car |
