@@ -300,8 +300,8 @@ function add_user_rating_grouped($participant_id, $image_id, $correspondence, $r
         die("Connection failed: " . $conn->connect_error);
     }
 
-    // Anti SQL injection
-    $note = mysqli_real_escape_string($note);
+    // Anti SQL injection - https://stackoverflow.com/a/2021729
+    $note = mb_ereg_replace("([^\w\s\d\-_~,;\[\]\(\).])", '', $note);
 
     $sql = "INSERT INTO ratings_grouped(participant_id, image_id, correspondence, realism, creative, made_by, note) VALUES ('$participant_id', '$image_id', '$correspondence', '$realism', '$creative','$made_by', '$note')";
 
@@ -322,8 +322,8 @@ function add_user_rating_single($participant_id, $image_id, $carlike, $detail, $
         die("Connection failed: " . $conn->connect_error);
     }
 
-    // Anti SQL injection
-    $note = mysqli_real_escape_string($note);
+    // Anti SQL injection - https://stackoverflow.com/a/2021729
+    $note = mb_ereg_replace("([^\w\s\d\-_~,;\[\]\(\).])", '', $note);
 
     $sql = "INSERT INTO ratings_single(participant_id, image_id, carlike, detail, realism, resemblence, creative, general_impression, made_by, note) VALUES ('$participant_id', '$image_id', '$carlike', '$detail', '$realism','$resemblence', '$creative', '$general_impression', '$made_by', '$note')";
 
@@ -344,8 +344,8 @@ function add_user_bias($participant_id, $biased, $note)
         die("Connection failed: " . $conn->connect_error);
     }
 
-    // Anti SQL injection
-    $note = mysqli_real_escape_string($note);
+    // Anti SQL injection - https://stackoverflow.com/a/2021729
+    $note = mb_ereg_replace("([^\w\s\d\-_~,;\[\]\(\).])", '', $note);
 
     $sql = "INSERT INTO bias(participant_id, biased, note) VALUES ('$participant_id', '$biased', '$note')";
 
