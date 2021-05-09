@@ -167,9 +167,12 @@ function show_lied_to_screen()
     <div class="p-5 mb-4 bg-grey text-white">
         <h1 class="mb-4 text-white">You've been lied to...</h1>
         <p class="mb-4">
-            Everything you've seen was created by a computer, even the "start" images. I'm sorry for lying, but some
-            people are biased and don't recognize achievements made by a computer. Please leave your thoughts on
-            whether or not you were biased and continue rating images. You're over halfway, doing great, thanks!
+            Everything you've seen was created by a computer. Yes, everything, even the "start" images.
+            An AI was trained to generate these images, all cars you've seen don't actually exist in real life, however,
+            the AI might generate car design which look familiar to us since it has learned from those cars what a car
+            should look like. I'm sorry for lying, but some people are biased and don't recognize achievements made by a
+            computer. Please leave your thoughts on whether or not you were biased and continue rating images. You're
+            over halfway, doing great, thanks!
         </p>
         <form enctype='multipart/form-data' method="post">
 

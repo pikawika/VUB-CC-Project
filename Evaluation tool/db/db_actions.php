@@ -163,7 +163,7 @@ function delete_tables()
         die("table deletion ratings_single failed: " . $conn->error);
     }
 
-    $sql = "DROP TABLE IF EXISTS `biased`";
+    $sql = "DROP TABLE IF EXISTS `bias`";
 
     if ($conn->query($sql) !== TRUE) {
         die("table deletion biased failed: " . $conn->error);
@@ -300,6 +300,9 @@ function add_user_rating_grouped($participant_id, $image_id, $correspondence, $r
         die("Connection failed: " . $conn->connect_error);
     }
 
+    // Anti SQL injection
+    $note = mysqli_real_escape_string($note);
+
     $sql = "INSERT INTO ratings_grouped(participant_id, image_id, correspondence, realism, creative, made_by, note) VALUES ('$participant_id', '$image_id', '$correspondence', '$realism', '$creative','$made_by', '$note')";
 
     if ($conn->query($sql) !== TRUE) {
@@ -319,6 +322,9 @@ function add_user_rating_single($participant_id, $image_id, $carlike, $detail, $
         die("Connection failed: " . $conn->connect_error);
     }
 
+    // Anti SQL injection
+    $note = mysqli_real_escape_string($note);
+
     $sql = "INSERT INTO ratings_single(participant_id, image_id, carlike, detail, realism, resemblence, creative, general_impression, made_by, note) VALUES ('$participant_id', '$image_id', '$carlike', '$detail', '$realism','$resemblence', '$creative', '$general_impression', '$made_by', '$note')";
 
     if ($conn->query($sql) !== TRUE) {
@@ -337,6 +343,9 @@ function add_user_bias($participant_id, $biased, $note)
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
+
+    // Anti SQL injection
+    $note = mysqli_real_escape_string($note);
 
     $sql = "INSERT INTO bias(participant_id, biased, note) VALUES ('$participant_id', '$biased', '$note')";
 
