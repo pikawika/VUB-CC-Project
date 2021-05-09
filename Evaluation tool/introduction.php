@@ -35,17 +35,18 @@ include 'layout/header.php';
                 Correspondence: an image is considered of good correspondence (5) if the cars displayed in the row
                 "start" are clearly recognisable in the variants displayed below and modifications performed are similar
                 between all four cars. For this image, correspondence is excellent as the car is clearly recognisable
-                between variants.
+                between variants and all modifications seem to be around the wheels/tires (change of size).
             </li>
             <li>
                 Realism: an image is considered very realistic (5) if you wouldn't doubt it could be an image you'd see
-                in a car magazine. This is subjective, but the cars in this image seem to be rather realistic.
+                in a car magazine. This is subjective, but the cars in this image seem to be rather realistic but not
+                perfect, especially the one on the right which is missing windows.
             </li>
             <li>
                 Creativity: whether you find the modifications creative is a subjective manner, if you recognize
                 (elements of) existing cars you can leave them in the notes section. For example, one might find the
-                second car from left very much looking like an old Volkswagen, by which he doesn't find it all that
-                creative.
+                third car from left very much looking like an old honda and think the modifications are very minor, thus
+                not scoring so good.
             </li>
             <li>
                 Made by: Whether you think the modifications are made by a human or a computer. Only pay attention
