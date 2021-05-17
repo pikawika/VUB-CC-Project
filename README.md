@@ -32,6 +32,8 @@ This is the GitHub repository for the individual Computational Creativity projec
    - [PDF export of presentation](Presentations/04-18_litarature_presentation.pdf)
 - Intermediate presentation describing the system using the CSF
    - [PDF export of presentation](Presentations/05-03_vub_cc_creative-framework_presentation.pdf) 
+- Final presentation
+   - [PDF export of presentation](Presentations/05-18_vub_cc_final_presentation.pdf)
 
 ## GANSpace tool
 The GANSPace tool used is a modified version of the publicly available GANSpace tool, commit [65b0c4c](https://github.com/harskish/ganspace/tree/65b0c4c7a4bbdcb5fedebb7c033dab59e27d61c0). This version had some issues to work with Ubuntu 20.04, hence why it was modified. 
