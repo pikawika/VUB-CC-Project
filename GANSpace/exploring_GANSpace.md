@@ -6,6 +6,7 @@ More details on the installation can be found [here](SETUP.md).
 ## Table of contents
 > - [Student info](#student-info)
 > - [Used GAN](#used-gan)
+> - [Intercepting generation of new image](#intercepting-generation-of-new-image)
 > - [Interesting layers and components](#interesting-layers-and-components)
 > - [Interesting seeds](#interesting-seeds)
 
@@ -25,6 +26,10 @@ The script rungan.sh will open the tool for the Stylegan2 LSUN *config f* model,
 However, more pre-trained StyleGAN2 models are made available by NVIDIA on [google drive](https://drive.google.com/drive/folders/1yanUI9m4b4PWzR0eurKNq6JR1Bbfbh6L) and the [NVIDIA website](https://nvlabs-fi-cdn.nvidia.com/stylegan2/networks/). These pre-trained models can also be used in the tool by implementing their download in: `models/wrappers.py`.
 
 The tool also allows for using your own StyleGAN, StyleGAN2 and BigGAN models. This has not been explored for this project.
+
+## Intercepting generation of new image
+
+Generating new images happens through a function call of resample_latent in interactive.py, the line is commented. Getting the outputted canvas is easy through the same code used for the added download button. This image can then be given to a reverse image search algorithm as discussed in the paper. If the image resembles one from the existing training set too much, the function can be called again.
 
 ## Interesting layers and components
 Some of the more interesting layers and components are given here. If a component is used for a figure in the paper, it's specifically stated in the description.

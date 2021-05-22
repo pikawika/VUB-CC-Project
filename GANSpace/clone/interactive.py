@@ -376,7 +376,7 @@ state = SimpleNamespace(
     base_act=None,  # activation of considered layer given z
 )
 
-
+# Generation of new images
 def resample_latent(seed=None, only_style=False):
     class_name = ui_state.outclass.get()
     if class_name.isnumeric():
