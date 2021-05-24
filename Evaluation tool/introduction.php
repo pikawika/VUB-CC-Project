@@ -85,7 +85,7 @@ include 'layout/header.php';
         </p>
         <ul class="mb-4">
             <li>
-                Car: rate from 0 - 5 how "car-like" the object shown is, does it have all required components in your
+                Car: rate from 1 - 5 how "car-like" the object shown is, does it have all required components in your
                 opinion? Try to keep this separate from realism. All of these images seem to be pretty car-like and
                 would most likely score pretty good.
             </li>

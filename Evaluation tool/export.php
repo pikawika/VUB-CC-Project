@@ -60,7 +60,7 @@ if ($_GET["key"] == $key) {
 
         // ratings grouped
         $file = fopen("results/ratings_single.csv", "w");
-        fputcsv($file, array('participant_id', 'image_id', 'carlike', 'detail', 'realism', 'resemblence', 'creative', 'general_impression', 'note'));
+        fputcsv($file, array('participant_id', 'image_id', 'carlike', 'detail', 'realism', 'resemblence', 'creative', 'general_impression', 'made_by', 'note'));
         $records = get_all_ratings_single();
         while ($row = mysqli_fetch_assoc($records)) {
             fputcsv($file, $row);

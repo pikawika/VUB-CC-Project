@@ -1,0 +1,184 @@
+participant_id,image_id,carlike,detail,realism,resemblence,creative,general_impression,made_by,note
+1,5,1,1,1,1,3,1,computer,"Unique but not a car"
+1,6,5,4,3,3,4,2,known,"Hmmm not sure if that is two fronts haha"
+1,7,5,5,5,5,4,4,human,
+1,8,5,4,4,5,3,4,computer,
+1,9,5,5,4,4,3,3,known,"cool text, meh car"
+1,10,5,4,4,5,4,4,known,
+1,11,5,4,3,4,4,4,computer,
+1,12,2,4,1,4,5,1,known,"this one is quite cool and reminds me of a mini"
+2,5,2,1,1,1,4,4,computer,"Looks nothing like a car but I quite like it. It looks like a albums cover of some horror music."
+2,6,3,5,3,2,4,3,known,"Audi looks. Lots of detail for a car that has two fronts lol"
+2,7,5,4,5,2,4,4,known,"Lol, an old ford pick up truck cabriolet thing. Weird. like it tho something odd with the doors"
+2,8,5,4,4,4,2,3,human,"Something weird with the mirrors, looks like a mercedes SUV front with classic BMW headlights"
+2,9,4,3,3,2,5,3,known,"The car is not creative but the text is cool. not easy to determine front and one of the doors is actually inside the body"
+2,10,5,5,3,3,4,4,known,"Quite like this image, feels like a car brochure, something odd with the reflection and no clue what the fog in the background is but overall really like this"
+2,11,4,1,3,4,2,2,computer,"Looks realistic, but also not at all (if that makes sense). Reminds me of those Alpinas"
+2,12,4,4,2,2,5,4,human,"I actually quite like this image. If you look at it quickly it doesnt look as if anything is wrong yet so much is. Its really quite interesting."
+3,5,1,2,1,2,4,2,computer,
+3,6,4,4,2,3,4,4,known,
+3,7,2,2,2,4,2,2,known,
+3,8,5,4,3,4,3,3,computer,
+3,9,4,4,4,4,4,4,known,
+3,10,4,4,4,4,3,4,known,
+3,11,4,4,3,3,3,3,computer,
+3,12,3,4,1,2,4,2,computer,
+5,6,1,2,2,4,3,4,computer,
+5,8,5,4,4,4,4,3,computer,
+5,9,4,3,3,3,5,3,human,
+5,11,2,2,3,2,3,3,computer,
+6,5,3,3,2,1,4,1,computer,
+6,6,4,3,3,4,4,3,known,
+6,7,4,4,4,5,3,3,known,
+6,8,5,5,4,5,4,5,computer,
+6,9,5,4,4,4,5,4,known,
+6,10,5,5,4,5,5,4,computer,
+6,11,4,5,4,4,4,4,computer,
+6,12,3,4,2,3,4,1,known,
+7,5,1,1,1,1,4,3,computer,"lol looks like a horror movie or something"
+7,6,3,3,2,2,4,3,human,"2 fronts"
+7,7,4,3,4,3,2,4,human,"some weird stuff in door, guess from stretching "
+7,8,4,3,4,4,2,2,known,"Think it is just a car with a mercedes badge and bmw lights"
+7,9,4,4,4,2,4,4,known,"the text () intrugues me"
+7,10,5,4,5,3,4,2,known,"Looks like an audi with bentley merge haha"
+7,11,4,3,2,3,1,1,known,"Aston looks pretty bad"
+7,12,3,5,3,2,5,4,human,"Think it is some hyundai perhaps, looks funny"
+8,5,1,1,1,1,1,1,computer,
+8,6,4,4,1,3,1,2,computer,
+8,9,5,5,5,5,3,5,computer,
+8,12,4,3,3,3,3,3,computer,
+9,5,1,1,1,1,3,1,human,"Dont really know what happened here"
+9,6,4,4,2,2,4,4,known,
+9,7,3,3,2,2,3,1,known,"Looks like the car is missing some parts"
+9,8,5,5,5,3,2,4,human,"The car is impressive for both human and computer"
+9,9,4,3,4,2,3,4,computer,"Looks like the cars front and back are both the back of a car"
+9,10,4,3,4,3,3,4,known,
+9,11,4,3,3,3,4,4,known,
+9,12,3,3,1,2,4,1,computer,"It (human or computer) kind of screwed up the car. I would say its creative but it isnt really a car."
+11,5,1,1,1,1,2,1,known,"looks like an album cover but not like a car"
+11,6,4,3,1,2,4,3,computer,"it looks out of proportion, I find it ugly, but unexpected in a way so creative"
+11,7,3,3,2,4,2,2,human,
+11,8,4,4,3,4,3,2,known,
+11,9,4,2,2,2,3,2,computer,
+11,10,2,1,2,3,3,3,known,
+11,11,1,1,1,1,4,1,known,
+11,12,2,2,1,1,3,1,computer,"it looks like another car drove into one side of another car"
+12,5,1,2,1,1,5,1,known,
+12,6,4,3,2,2,5,2,computer,
+12,7,2,2,2,3,3,2,computer,
+12,8,4,4,4,3,4,3,computer,
+12,9,4,4,5,4,3,4,human,
+12,10,5,4,5,4,3,4,known,
+12,11,4,3,3,4,4,3,known,
+12,12,2,4,1,2,5,3,known,
+13,5,1,3,1,2,5,2,human,
+13,6,4,4,2,2,5,3,computer,
+13,7,3,4,2,4,3,2,known,
+13,8,5,5,5,5,2,3,known,
+13,9,5,4,4,2,2,3,known,
+13,10,5,4,5,4,4,5,human,
+13,11,5,2,3,4,2,2,known,
+13,12,2,2,2,3,4,3,computer,
+15,5,1,1,1,2,2,1,computer,
+15,6,3,3,2,2,3,2,known,
+15,7,3,2,2,2,2,1,known,
+15,8,4,3,4,5,2,4,known,
+15,9,5,2,2,3,2,2,human,
+15,10,4,3,4,3,3,3,human,
+15,11,2,2,2,2,4,3,known,
+15,12,1,1,1,1,2,1,computer,
+16,5,1,1,1,1,4,1,computer,
+16,6,4,3,1,1,4,2,human,
+16,7,4,5,4,5,4,2,known,
+16,8,4,5,2,4,3,2,known,
+16,9,5,4,2,3,4,2,computer,
+16,10,5,5,5,3,5,4,human,
+16,11,3,4,1,1,4,2,known,
+16,12,1,4,1,1,5,1,known,
+17,5,1,1,1,1,2,1,known,
+17,6,5,3,2,3,4,4,human,
+17,7,4,3,4,4,5,4,human,
+17,8,4,4,4,5,4,4,known,
+17,9,4,4,2,4,4,4,known,
+17,10,5,5,5,3,3,5,human,
+17,11,3,2,2,3,4,3,known,
+17,12,1,2,1,3,4,2,computer,
+18,5,1,1,1,1,1,1,known,
+18,6,3,2,2,4,2,2,known,
+18,7,2,2,2,4,2,2,computer,
+18,8,4,4,4,3,2,3,known,
+18,9,5,4,4,4,3,3,computer,
+18,10,5,5,5,4,4,4,known,
+18,11,4,2,4,4,3,3,human,
+18,12,1,1,1,1,2,1,computer,
+20,5,1,1,1,1,3,1,known,
+20,6,2,3,2,3,2,2,computer,
+20,7,3,4,4,3,3,3,human,
+20,8,3,3,2,3,2,2,computer,
+20,9,2,2,2,2,3,2,known,
+20,10,3,3,2,3,2,3,computer,
+20,11,2,3,2,3,2,2,known,
+20,12,1,3,1,1,3,1,known,
+21,5,1,1,1,1,4,1,computer,
+21,6,4,4,4,3,4,5,human,
+21,7,5,3,3,4,4,4,known,
+21,8,2,2,2,3,3,3,known,
+21,9,4,2,2,3,3,4,known,
+21,10,4,4,4,3,4,4,known,
+21,11,5,4,3,3,4,4,computer,
+21,12,2,2,1,1,4,1,computer,
+22,5,1,4,1,1,4,1,computer,"It is detailed and creative but doesnt look like a car. It looks like an abstract art piece."
+22,6,5,5,5,4,5,5,known,
+22,7,5,5,5,5,5,5,known,Wow.
+22,8,5,5,5,5,3,5,known,
+22,9,5,5,5,5,5,5,known,
+22,10,5,5,5,5,5,5,human,"Amazing design. Hard to believe this could be an AI."
+22,11,5,5,5,4,4,5,human,"Definitely human level design. Well done if this is an AI."
+22,12,5,4,2,4,2,4,computer,"This is funny. Quite obviously a car but it seems confused about angles. I would guess this is an AI."
+23,5,1,1,1,1,1,1,computer,"Im incredibly confused as to what portion of the picture is supposed to be a car"
+23,6,3,4,3,2,3,2,computer,
+23,7,3,4,4,4,3,3,known,
+23,8,5,3,4,4,3,3,known,
+23,9,5,4,4,4,4,4,human,
+23,10,5,4,4,4,3,4,known,
+23,11,4,3,2,3,3,3,human,
+23,12,2,2,2,2,3,1,known,
+25,5,1,1,1,1,1,1,known,
+25,6,1,2,1,1,1,1,computer,
+25,7,3,2,1,5,4,3,computer,
+25,8,4,3,2,5,4,4,known,
+25,9,2,2,2,2,2,1,computer,
+25,10,4,2,3,3,3,4,computer,
+25,11,3,3,2,2,2,2,known,
+25,12,1,1,1,1,1,1,known,
+26,5,1,1,1,1,3,2,known,
+26,6,4,3,2,3,4,3,computer,
+26,7,2,1,1,3,3,3,known,
+26,8,5,3,4,4,2,4,known,
+26,9,5,3,3,2,4,1,computer,
+26,10,5,4,5,4,2,4,human,
+26,11,4,4,4,4,2,3,known,
+26,12,3,2,1,1,4,2,computer,
+29,5,1,1,1,1,2,1,human,
+29,6,5,4,4,3,5,4,known,
+29,7,2,5,2,5,3,3,known,
+29,8,5,3,3,4,4,4,known,
+29,9,5,5,5,3,3,5,known,
+29,10,5,4,5,4,4,5,human,
+29,11,3,2,3,1,3,2,computer,
+29,12,2,4,1,3,3,1,computer,
+30,5,3,3,4,3,4,4,computer,
+30,6,4,3,3,3,4,3,computer,
+30,7,4,4,3,3,4,4,known,
+30,9,4,4,3,2,3,4,known,
+30,10,3,3,4,4,3,3,computer,
+30,11,2,2,2,3,3,3,computer,
+30,12,4,3,4,3,3,4,known,
+32,5,2,2,1,1,5,2,known,"Poster voor een horror film Met een beetje fantasie zie ik in een auto in de witte vlek..."
+32,6,3,3,3,2,4,4,human,"Ziet er uit als een creatie dat door top gear of dergelijke gemaakt is. Lijkt 2 voorkanten te hebben door naar de spiegels te kijken echter de bumper en lichten doen een achterkant vermoeden. Best interessant."
+32,7,4,4,3,3,4,4,computer,"Een pickup cabrio, grappig concept. Front heeft een rare bumper guard langs 1 zeide maar niet de andere zeide, deuren en lade van truck lijken slecht aan elkaar geplakt en er is een rare plek op de achterkant. Vermoedelijk pc maar wel intreressant idee."
+32,8,4,3,3,4,2,3,known,"Mercedes SUV met BMW angle eyes"
+32,9,4,5,4,4,3,4,human,"Heeft iets weg van de Bentley Flying Spur. Voorkant lijkt terug op achterkant als je lichten bestudeerd."
+32,10,5,4,5,3,5,5,known,"Leuk design, Iets in mij zegt Audi maar geeen idee welk model het juist zou zijn. Passa koplamp is raar"
+32,11,4,2,2,4,2,3,computer,"Lijkt op een aston martin met alpine lichten op geplakt. Vrij slechte kwalieteit maar wel interesant, rare scope in motorkap."
+32,12,4,5,3,3,4,3,known,"Grappig, op een snelle glans realistisch maar dat is het uiteraard niet. Heeft iets weg van Kia Rio"
