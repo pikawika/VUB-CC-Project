@@ -1,0 +1,104 @@
+\chapter{About the creative domain}
+\label{ch:creative_domain}
+
+% OK
+
+In this chapter, the creative domain of car design is discussed.
+Relevant literature in the CC field and surrounding GANs are briefly summarised.
+The available resources for this project and the limits they bring with them are also touched upon.
+
+%------------------------------------
+\section{Car design and Computational Creativity}
+\label{sec:why_car_design}
+
+The car industry is only just over a century old and has already evolved from a motorized luxury carriage for the rich to a multi-billion euro industry for the masses.
+In the last decade, the car industry has undergone major changes, with electrification and autonomous driving being the most prominent.
+Computer algorithms play a key role in these changes to ensure safe autonomous driving and optimal battery usage.
+
+However, computer algorithms do much more for the car industry.
+They are used for crash test simulations \citep{crashtest}, automotive aerodynamics \citep{carearo} and more.
+This raises the question: if the industry uses so many computer-generated simulations and calculations for validating the design of cars, can't a computer generate a car design?
+This is a task that is gaining interest by big brands, especially in Formula 1 and hypercar design.
+
+This paper explores that idea by building a creative system capable of generating photorealistic novel car designs and having control over the generated designs.
+It is noted that the output of this system is only that, a picture of a car.
+The true viability of the proposed car concerning legislation, safety and more are not taken into consideration. 
+As is the case for architectural design, clothing design and many other design-related domains, car design is deemed a creative domain.
+Some might argue against this idea, especially if they're not interested in cars.
+Arguments could include that the limits put in place by legislation and the desire for reoccurring style traits of a brand limit the creativity in the domain.
+Whilst many attempts at formalising what is (not) creative, such as the important work by \citet{boden2004creative}, have been made, it is still hard to objectively deem something creative.
+However, with numerous car museums, legendary car design brands as Pininfarina and culturally driven evolution in car design, the domain is deemed creative for this paper.
+
+
+
+
+%------------------------------------
+\section{Relevant literature}
+\label{sec:relevant_literature}
+
+Much interesting relevant literature exists.
+Some important papers on GANs and two relevant papers from the CC field are discussed in what follows.
+These papers give better insight into how the technology used for this paper's system works and its viability as a useful creative system in the domain.
+
+\subsection{Literature on GANs}
+\label{subsec:relevant_literature_gan}
+
+Generative adversarial networks (GANs), first introduced by \citet{gan_founder}, are systems capable of generating output images by training both a generator and discriminator to play a form of cat-and-mouse game.
+More details on this idea are given later in this paper.
+Such networks are the state-of-the-art used for image generation and have been used for similar, non-scientific, projects by \citet{gancar1}, \citet{gancar2}, \citet{gancar3} and more.
+Many different variants of GANs exist, with an impressive recent example being BigGAN-deep by \citet{biggan}.
+Perhaps the most known GAN is StyleGAN by \citet{stylegan}, researchers at NVidia.
+It was used for a heavily media covered website that displays images of people who don't actually exist\footnote{\url{https://thispersondoesnotexist.com/}}.
+
+For the system of this paper, a pre-trained StyleGAN2 model is used.
+StyleGAN2 is a successor to the already mentioned StyleGAN \citep{stylegan2}.
+StyleGAN2 introduces many improvements over the basic GAN idea by making use of concepts from the style transfer literature.
+When trained on faces, the models seem to be capable of separating high-level attributes (e.g. orientation of face) and more low-level variations (e.g. presence of freckles).
+Other differences include the use of four distinct random noise vector inputs to intermediate layers as opposed to only one starting noise vector with basic GANs.
+
+Since StyleGAN and StyleGAN2 are made with the idea of being able to learn the concepts of an image, such as the discussed orientation and freckles with face generation, tools to easily control these parameters are being developed.
+GANSpace by \citet{ganspace} is one of them.
+GANSpace takes a trained model of either StyleGAN, StyleGAN2 or BigGAN and extracts interpretable controls for image synthesis of them.
+This is done by identifying important latent directions based on PCA analysis in the activation space of these GANs.
+The main contribution of this tool for this paper is that it allows exploration of a GANs conceptual space in an easy manner.
+
+
+\clearpage
+\subsection{Literature on car design in the CC field}
+\label{subsec:relevant_literature_cc}
+
+Some non-scientific projects that use GANs to generate novel car designs were already mentioned.
+However, scientific papers on car design in the CC field aren't very common.
+A particularly interesting research paper worth mentioning is the one by \citet{creativecargan}.
+In their paper, a creative system is developed which takes a pen-and-paper sketch of a car and returns a graphical representation of what that car could look like in a more realistic representation.
+The authors of that paper deem their system creative since it is capable of generating images from angles of the car that are not visible in the input sketch.
+
+Their paper also demonstrates that creative systems can not only be used to complete a creative task but also as a source of inspiration for human-made creative work.
+This is because, just like it is the case for this paper's system, their outputted images aren't meant to be viable or regulatory.
+They are meant to give an idea of what a car based on their input sketch could roughly look like.
+Moreover, their creative system proposes multiple variants based on the input sketch.
+This allows the car designer to get inspiration for, and an idea of what a finalised design could look like.
+The creative system is not made to replace a car designer's job, but rather to be a tool in optimising a car designer's workflow.
+
+DARCI by \citet{darci} is a well-known system in the CC field that produce images through creative means.
+DARCI is accepted as being a creative system in the field that makes use of neural networks (NNs).
+Its use of NNs is important when discussing the viability of using GANs in the CC field later in this paper.
+
+
+
+%------------------------------------
+\section{Available resources}
+\label{sec:available_resources}
+
+GANs require a lot of images, often in the millions, to generate pleasing results.
+Some of the pre-trained StyleGAN2 models made available by NVidia used over 20 million images for certain configurations \citep{stylegan2}.
+Whilst it would be possible to create a web-scraper that gathers such a quantity of images from car auction websites, it isn't viable for this project.
+This would mean an existing database of car images would need to be used for training the StyleGAN2 model.
+One such database might be the LSUN-Stanford Car one by \citet{cardb}.
+However, the amount of time required to train a StyleGAN2 model with this amount of data would be weeks, if not months with the computational power available for this paper.
+Using fewer images and/or epochs would most likely result in non-viable results.
+This is one of the reasons a pre-trained model is used.
+
+For this paper, access to numerous experts in the car industry with excellent knowledge of existing car brands and models was available.
+These people are seen as juries with expertise.
+This helped tremendously to determine the P-creativity and H-creativity of the system, which is further discussed in the evaluation chapter of this paper.

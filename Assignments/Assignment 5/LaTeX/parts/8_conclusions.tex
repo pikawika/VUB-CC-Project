@@ -1,0 +1,91 @@
+\chapter{Discussion}
+\label{part:conclusions}
+
+% NOT OK
+
+With all major parts of the creative system discussed and the external evaluation results analysed, a conclusion on the results is given.
+From this, a reflection on the designed system is given and the added value of this paper is discussed.
+The paper ends by mentioning interesting future work and an important closing remark.
+
+
+%------------------------------------
+\section{Conclusions on the external evaluation}
+\label{sec:conclusion_external_results}
+
+The received ratings corresponded nicely with the intend of the images.
+Artefacts of the system received high creativity scores but low ratings for the realism and car measure as they do not contain all required car components.
+This makes them creative artefacts of the system that are interesting but not particularly useful for the domain.
+Luckily these artefacts didn't occur often and would likely occur even less if the GAN were trained for even more epochs.
+
+The system's learned concepts found through the extended GANSpace tool were also recognized by the participants, further confirming the labelling given for their role in the image generation.
+The manual selection as replacement of the proposed similarity rating measure also proved successful since the only comparison to an existing car model was the one displayed in figure \ref{fig:similarcar}.
+Whilst these cars do share similarities, they differ greatly when taking into account the similarities between designs in the domain.
+It is not unlikely these two cars could co-exist in Bentley's car range. 
+Many comments and mediocre ratings of similarity suggest this recognition of existing car brand styling traits occurs often.
+Remember, this behaviour is often desired in the domain and thus positive for the system.
+
+It is also shown that a generated car design can score great for reality, creativity and the other measure all at once.
+With the car design shown in figure \ref{fig:survey_realistic} being the participant's favourite.
+This generated design is indeed very intriguing, and thanks to the relatively realistic background it is not hard to imagine it being a press photo of a newly announced model.
+
+The system is also capable of generating designs that can function as an inspiration for car designers even if they aren't perfect.
+This was the case with the image shown in figure \ref{fig:missingpiece}.
+The concept of a convertible truck is novel and whilst the image is not a perfect design due to missing pieces, it clearly shows the new concept and can be used as inspiration for car designers.
+
+
+
+
+%------------------------------------
+\section{Reflection on the developed creative system}
+\label{sec:reflection_system}
+
+The designed system is defended to be a creative system by explaining the different components based on Ventura's CC description paper as well as putting it into terms of the CSF.
+The issues that GANs have to be accepted in the CC field were tackled, albeit mostly manual and not well generalisable for now.
+However, the manual process can be automated and build into the proposed pipeline, given that there is enough computational power available.
+These added measures don't limit the GANs capabilities as is also shown by this paper's system.
+All of the different components are well documented and results can easily be recreated.
+Readers are invited to play with the system and optimize it even further.
+
+It isn't hard to imagine an optimized version of the system trained on a specific set of car models can function as an inspiration source for car designers.
+This makes this creative system one that has clear potential in the industry as an aid for a creative profession rather than to replace it.
+This is much like the system created by \citet{creativecargan}, which was made to optimize a car designers pipeline.
+Since StyleGAN2 works so well for different types of image generation, it is also not hard to imagine a similar system being in place in different domains.
+This would only require small changes to the proposed pipeline from figure \ref{fig:system_pipeline}.
+
+
+%------------------------------------
+\section{Added value}
+\label{sec:added_value}
+
+This paper discussed the shortcomings of GANs in the CC field.
+By doing so, it also mentioned solutions that can be put in place to make GANs viable as creative systems.
+These solutions were demonstrated in the creative system of this paper that is capable of generating novel car designs.
+An external evaluation tool has been custom made and is available under the GPL V3 license.
+This tool can be helpful for the CC field and other image evaluation settings. 
+
+
+%------------------------------------
+\section{Interesting future work}
+\label{sec:future_work}
+
+Some interesting future work has already been mentioned.
+A summary is given below.
+\begin{itemize}
+    \item Train a StyleGAN2 model on a set of cars from one specific brand. Analyse the outputs together with a domain expert of that brand to further analyse the viability of such a system as an aid for a car designer.
+    \item Implement the automatic similarity rating measure, ideally as part of the GAN and thus the training process.
+    \item Implement a comparable system for a different domain, such as the clothing design domain.
+    \item Perform an even broader external evaluation, possibly with car designers themselves.
+\end{itemize}
+
+%------------------------------------
+\section{Closing remark}
+\label{sec:closing_remark}
+
+This paper made use of component analysis to discuss the system's capability of learning concepts.
+This approach is widely used in literature to make deep NNs explainable.
+An example of a paper that uses the same ideology is the mentioned paper by \citet{invidualunitanalysis}.
+However, this approach is not without risk and a famous quote by E. Yudkowsky is given as a closing remark.
+
+
+\epigraph{By far, the greatest danger of Artificial Intelligence is that people conclude too early that they understand it.}
+{\textit{Eliezer Yudkowsky \\ AI theorist and writer}}
