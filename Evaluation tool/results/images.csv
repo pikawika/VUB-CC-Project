@@ -1,0 +1,13 @@
+image_id,filename,path,grouped
+1,grouped_1,images/grouped/grouped_1.png,1
+2,grouped_2,images/grouped/grouped_2.png,1
+3,grouped_3,images/grouped/grouped_3.png,1
+4,grouped_4,images/grouped/grouped_4.png,1
+5,single1,images/single/single1.png,0
+6,single2,images/single/single2.png,0
+7,single3,images/single/single3.png,0
+8,single4,images/single/single4.png,0
+9,single5,images/single/single5.png,0
+10,single6,images/single/single6.png,0
+11,single7,images/single/single7.png,0
+12,single8,images/single/single8.png,0
